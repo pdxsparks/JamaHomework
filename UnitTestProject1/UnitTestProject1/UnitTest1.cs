@@ -13,7 +13,6 @@ namespace framework
         //seleniumTestBase selwrapper = new seleniumTestBase();
         jama jama = new jama();
         
-
         [TestMethod]
         public void NewFeatureRequiredfields()
         {
@@ -22,6 +21,7 @@ namespace framework
             jama.addNewItem_feature();
             jama.saveAndCloseNewFeature();
 
+            //test passes if validation message is a match and if class .x-xform-invalid is findable
             Assert.IsTrue(jama.verifyText("You are missing some required fields", By.CssSelector(".j-error-panel")));
             Assert.IsTrue(jama.verifyClass(By.CssSelector(".x-form-invalid")));
         }
@@ -34,6 +34,7 @@ namespace framework
             jama.addNewItem_feature();
             jama.createFeature_priorityHigh_noNotify();
 
+            //test passes if we are not on the comment and notify page, the project name matches and the priority matches
             Assert.IsFalse(jama.verifyText("Comment and Notify Feature", By.CssSelector(".j-item-header-title")));
             Assert.IsTrue(jama.verifyText("Project Homework", By.CssSelector(".j-item-field-name")));
             Assert.IsTrue(jama.verifyText("Medium", By.CssSelector("div[name=\"priority\"]")));

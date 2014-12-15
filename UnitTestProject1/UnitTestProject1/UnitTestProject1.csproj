@@ -64,7 +64,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Selenium\seleniumTestBase.cs" />
-    <Compile Include="tools\jama.cs" />
+    <Compile Include="WorkerClasses\jama.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
